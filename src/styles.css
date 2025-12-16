@@ -29,6 +29,21 @@ section.min-height {
   min-height: 100vh;
 }
 
+/* Decorative background (replaces photo) */
+section .background {
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, 0);
+  width: 100vmax;
+  z-index: -1;
+  pointer-events: none;
+  /* gradiente verde -> azul */
+  background: linear-gradient(135deg, #0ea5a4 0%, #3b82f6 60%);
+  background-size: cover;
+}
+
 section.padding {
   padding: 5rem 0;
 }
