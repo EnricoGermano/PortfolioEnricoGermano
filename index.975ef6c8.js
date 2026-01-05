@@ -27212,12 +27212,13 @@ const About = ()=>{
                     margin: "3rem auto",
                     textAlign: "center"
                 },
+                className: "about-box",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
                         children: "Sobre mim"
                     }, void 0, false, {
                         fileName: "src/Components/About.jsx",
-                        lineNumber: 36,
+                        lineNumber: 37,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27225,12 +27226,12 @@ const About = ()=>{
                         children: description
                     }, void 0, false, {
                         fileName: "src/Components/About.jsx",
-                        lineNumber: 37,
+                        lineNumber: 38,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                         fileName: "src/Components/About.jsx",
-                        lineNumber: 38,
+                        lineNumber: 39,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
@@ -27241,21 +27242,22 @@ const About = ()=>{
                             margin: "2rem 3rem",
                             gap: "3rem"
                         },
+                        className: "skills-list",
                         children: skillsList.map((skill)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 children: skill
                             }, skill, false, {
                                 fileName: "src/Components/About.jsx",
-                                lineNumber: 49,
+                                lineNumber: 51,
                                 columnNumber: 13
                             }, undefined))
                     }, void 0, false, {
                         fileName: "src/Components/About.jsx",
-                        lineNumber: 39,
+                        lineNumber: 40,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                         fileName: "src/Components/About.jsx",
-                        lineNumber: 52,
+                        lineNumber: 54,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27265,13 +27267,48 @@ const About = ()=>{
                         children: detailOrQuote
                     }, void 0, false, {
                         fileName: "src/Components/About.jsx",
-                        lineNumber: 53,
+                        lineNumber: 55,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Components/About.jsx",
                 lineNumber: 27,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("style", {
+                children: `
+        @media (max-width: 768px) {
+          .about-box {
+            width: 90% !important;
+            padding: 2rem !important;
+            margin: 2rem auto !important;
+          }
+
+          .skills-list {
+            columns: 1 !important;
+            margin: 1rem 1.5rem !important;
+            font-size: 1rem !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .about-box {
+            width: 95% !important;
+            padding: 1.5rem !important;
+            margin: 1.5rem auto !important;
+          }
+
+          .skills-list {
+            columns: 1 !important;
+            margin: 1rem 1rem !important;
+            font-size: 0.95rem !important;
+          }
+        }
+      `
+            }, void 0, false, {
+                fileName: "src/Components/About.jsx",
+                lineNumber: 58,
                 columnNumber: 7
             }, undefined)
         ]
@@ -28506,59 +28543,134 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
  * user scrolls so that they can constantly reach any part of your page.
  */ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$();
 const Header = ()=>{
+    _s();
+    const [menuOpen, setMenuOpen] = (0, _react.useState)(false);
+    const toggleMenu = ()=>{
+        setMenuOpen(!menuOpen);
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         style: {
             position: "fixed",
             display: "flex",
-            justifyContent: "center",
-            gap: "2rem",
+            justifyContent: "space-between",
+            alignItems: "center",
             background: "rgba(255,255,255,0.75)",
             padding: "1rem",
             top: 0,
             width: "100%",
-            zIndex: 10
+            zIndex: 10,
+            boxSizing: "border-box"
         },
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                href: "#home",
-                children: "In\xedcio"
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                style: {
+                    fontWeight: "bold",
+                    fontSize: "1.2rem"
+                },
+                children: "EG"
             }, void 0, false, {
                 fileName: "src/Components/Header.jsx",
-                lineNumber: 24,
+                lineNumber: 32,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                href: "#about",
-                children: "Sobre"
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: toggleMenu,
+                style: {
+                    display: "none",
+                    background: "none",
+                    border: "none",
+                    fontSize: "1.5rem",
+                    cursor: "pointer"
+                },
+                className: "hamburger-btn",
+                children: "☰"
             }, void 0, false, {
                 fileName: "src/Components/Header.jsx",
-                lineNumber: 25,
+                lineNumber: 35,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                href: "#portfolio",
-                children: "Portf\xf3lio"
-            }, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
+                style: {
+                    display: "flex",
+                    gap: "2rem",
+                    justifyContent: "center"
+                },
+                className: "nav-links",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#home",
+                        children: "In\xedcio"
+                    }, void 0, false, {
+                        fileName: "src/Components/Header.jsx",
+                        lineNumber: 58,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#about",
+                        children: "Sobre"
+                    }, void 0, false, {
+                        fileName: "src/Components/Header.jsx",
+                        lineNumber: 59,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#portfolio",
+                        children: "Portf\xf3lio"
+                    }, void 0, false, {
+                        fileName: "src/Components/Header.jsx",
+                        lineNumber: 60,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#footer",
+                        children: "Contato"
+                    }, void 0, false, {
+                        fileName: "src/Components/Header.jsx",
+                        lineNumber: 61,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
                 fileName: "src/Components/Header.jsx",
-                lineNumber: 26,
+                lineNumber: 50,
                 columnNumber: 7
             }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                href: "#footer",
-                children: "Contato"
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("style", {
+                children: `
+        @media (max-width: 600px) {
+          .hamburger-btn {
+            display: block !important;
+          }
+
+          .nav-links {
+            display: ${menuOpen ? "flex" : "none"} !important;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem;
+            gap: 1rem;
+            border-bottom: 1px solid #ddd;
+          }
+        }
+      `
             }, void 0, false, {
                 fileName: "src/Components/Header.jsx",
-                lineNumber: 27,
+                lineNumber: 64,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Components/Header.jsx",
-        lineNumber: 11,
+        lineNumber: 17,
         columnNumber: 5
     }, undefined);
 };
+_s(Header, "K77eQVFAaxZgbvGoNWFAiCE7OTY=");
 _c = Header;
 exports.default = Header;
 var _c;
@@ -28610,6 +28722,7 @@ const Home = ({ name , title  })=>{
                     left: "2rem",
                     width: "17rem"
                 },
+                className: "home-text",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                         children: name
@@ -28652,6 +28765,28 @@ const Home = ({ name , title  })=>{
             }, void 0, false, {
                 fileName: "src/Components/Home.jsx",
                 lineNumber: 16,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("style", {
+                children: `
+        @media (max-width: 768px) {
+          .home-text {
+            top: 7rem !important;
+            left: 1rem !important;
+            width: auto !important;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .home-text {
+            top: 6rem !important;
+            left: 0.5rem !important;
+          }
+        }
+      `
+            }, void 0, false, {
+                fileName: "src/Components/Home.jsx",
+                lineNumber: 20,
                 columnNumber: 7
             }, undefined)
         ]
@@ -28736,14 +28871,17 @@ const Portfolio = ()=>{
                 style: {
                     display: "flex",
                     flexDirection: "row",
-                    paddingTop: "3rem"
+                    paddingTop: "3rem",
+                    gap: "2rem"
                 },
+                className: "portfolio-container",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         style: {
                             maxWidth: "40%",
                             alignSelf: "center"
                         },
+                        className: "portfolio-image",
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                             src: (0, _portfolioIllustrationSvgDefault.default),
                             style: {
@@ -28763,7 +28901,7 @@ const Portfolio = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "container",
+                        className: "container portfolio-projects",
                         children: projectList.map((project)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 className: "box",
                                 children: [
@@ -28809,6 +28947,28 @@ const Portfolio = ()=>{
             }, void 0, true, {
                 fileName: "src/Components/Portfolio.jsx",
                 lineNumber: 31,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("style", {
+                children: `
+        @media (max-width: 768px) {
+          .portfolio-container {
+            flex-direction: column !important;
+            gap: 1rem !important;
+          }
+
+          .portfolio-image {
+            max-width: 100% !important;
+          }
+
+          .portfolio-projects {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `
+            }, void 0, false, {
+                fileName: "src/Components/Portfolio.jsx",
+                lineNumber: 51,
                 columnNumber: 7
             }, undefined)
         ]
