@@ -28,15 +28,15 @@ const Portfolio = () => {
   return (
     <section className="padding" id="portfolio">
       <h2 style={{ textAlign: "center" }}>Portfólio</h2>
-      <div style={{ display: "flex", flexDirection: "row", paddingTop: "3rem" }}>
-        <div style={{ maxWidth: "40%", alignSelf: "center" }}>
+      <div style={{ display: "flex", flexDirection: "row", paddingTop: "3rem", gap: "2rem" }} className="portfolio-container">
+        <div style={{ maxWidth: "40%", alignSelf: "center" }} className="portfolio-image">
           <img
             src={portfolioIllustration}
             style={{ height: "90%", width: "100%", objectFit: "cover" }}
             alt={imageAltText}
           />
         </div>
-        <div className="container">
+        <div className="container portfolio-projects">
           {projectList.map((project) => (
             <div className="box" key={project.title}>
               <a href={project.url} target="_blank" rel="noopener noreferrer">
@@ -47,6 +47,23 @@ const Portfolio = () => {
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .portfolio-container {
+            flex-direction: column !important;
+            gap: 1rem !important;
+          }
+
+          .portfolio-image {
+            max-width: 100% !important;
+          }
+
+          .portfolio-projects {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };

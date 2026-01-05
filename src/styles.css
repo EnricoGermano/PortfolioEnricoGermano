@@ -138,3 +138,96 @@ img.socialIcon {
   height: 30px;
   width: 30px;
 }
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  p.large {
+    font-size: 18px;
+  }
+
+  p.small {
+    font-size: 14px;
+  }
+
+  section.padding {
+    padding: 3rem 1rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    margin: 20px 10px;
+    gap: 15px;
+  }
+
+  .container .box {
+    padding: 16px 12px;
+  }
+
+  hr {
+    margin: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 0.95rem;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  p.large {
+    font-size: 16px;
+  }
+
+  section.padding {
+    padding: 2rem 0.5rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    margin: 10px 5px;
+    gap: 10px;
+  }
+
+  .container .box {
+    padding: 12px 10px;
+    border-radius: 8px;
+  }
+
+  img.socialIcon {
+    height: 24px;
+    width: 24px;
+  }
+
+  hr {
+    margin: 1rem 0.5rem;
+  }
+}
