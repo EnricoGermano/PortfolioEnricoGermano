@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Portfolio-Enrico-Germano",
   "source": "src/index.html",
-  "homepage": "https://EnricoGermano.github.io/codespaces-project-template-js/",
+  "homepage": "https://EnricoGermano.github.io/PortfolioEnricoGermano/",
   "scripts": {
     "start": "parcel",
     "build": "parcel build",
-    "build-gh": "parcel build --public-url 'https://EnricoGermano.github.io/codespaces-project-template-js/'",
+    "build-gh": "parcel build --public-url 'https://EnricoGermano.github.io/PortfolioEnricoGermano/'",
     "predeploy": "npm run build-gh",
     "deploy": "gh-pages -d dist"
   },
