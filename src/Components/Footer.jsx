@@ -1,4 +1,3 @@
-
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -10,7 +9,6 @@ import linkedInIcon from "../images/socials/linkedin.svg";
 import mediumIcon from "../images/socials/medium.svg";
 import twitterIcon from "../images/socials/twitter.svg";
 import youTubeIcon from "../images/socials/youtube.svg";
-
 
 const Footer = (props) => {
   const {
@@ -36,7 +34,7 @@ const Footer = (props) => {
         gap: "2.5rem",
         padding: "5rem 0 3rem",
         backgroundColor: primaryColor,
-        width: "100vw"
+        width: "100vw",
       }}
     >
       <div
@@ -109,7 +107,6 @@ const Footer = (props) => {
 Footer.defaultProps = {
   name: "",
 };
-
 Footer.propTypes = {
   devDotTo: PropTypes.string,
   email: PropTypes.string,
@@ -121,7 +118,6 @@ Footer.propTypes = {
   primaryColor: PropTypes.string,
   twitter: PropTypes.string,
   youTube: PropTypes.string,
-
 };
 
 export default Footer;

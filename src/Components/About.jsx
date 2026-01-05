@@ -1,4 +1,3 @@
-
 import React from "react";
 import image from "../images/about-pattern.svg";
 
