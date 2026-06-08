@@ -1,71 +1,60 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-import portfolioIllustration from "../images/portfolio-illustration.svg";
-
-const imageAltText = "ilustração de portfólio";
-
-const projectList = [
-  {
-    title: "Plataforma de Gestão Empresarial",
-    description:
-      "Plataforma de Gestão Integrada para centralizar processos, automatizar tarefas manuais e fornecer dashboards com indicadores-chave, garantindo maior controle e eficiência para a empresa.",
-    url: "https://github.com/CodexDSM/CodeX",
-  },
-  {
-    title: "Ferramenta de consulta de dados de exportação/importação",
-    description:
-      "Aplicação web de consulta e análise dos dados públicos de exportação/importações dos municípios de São Paulo.",
-    url: "https://github.com/EnricoGermano/DSM---Projeto-de-API-1-Semestre",
-  },
-  {
-    title: "Plataforma de Gerenciamento de Transporte",
-    description: "Solução para gerenciamento de transporte e logística.",
-    url: "https://github.com/EnricoGermano/YourTruck",
-  },
-];
-
-const Portfolio = () => {
+const Portfolio = ({ projects }) => {
   return (
     <section className="padding" id="portfolio">
-      <h2 style={{ textAlign: "center" }}>Portfólio</h2>
-      <div style={{ display: "flex", flexDirection: "row", paddingTop: "3rem", gap: "2rem" }} className="portfolio-container">
-        <div style={{ maxWidth: "40%", alignSelf: "center" }} className="portfolio-image">
-          <img
-            src={portfolioIllustration}
-            style={{ height: "90%", width: "100%", objectFit: "cover" }}
-            alt={imageAltText}
-          />
-        </div>
-        <div className="container portfolio-projects">
-          {projectList.map((project) => (
-            <div className="box" key={project.title}>
-              <a href={project.url} target="_blank" rel="noopener noreferrer">
-                <h3 style={{ flexBasis: "40px" }}>{project.title}</h3>
-              </a>
-              <p className="small">{project.description}</p>
-            </div>
-          ))}
-        </div>
+      <div className="section-heading">
+        <p className="eyebrow">Projetos</p>
+        <h2>Trabalhos selecionados</h2>
+        <p className="section-copy">Projetos que mostram experiência prática em diferentes contextos.</p>
       </div>
-
-      <style>{`
-        @media (max-width: 768px) {
-          .portfolio-container {
-            flex-direction: column !important;
-            gap: 1rem !important;
-          }
-
-          .portfolio-image {
-            max-width: 100% !important;
-          }
-
-          .portfolio-projects {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
+      <div className="project-grid">
+        {projects.map((project) => (
+          <article className="box project-card" key={project.title}>
+            <img className="project-image" src={project.image} alt={project.title} />
+            <a href={project.repository} target="_blank" rel="noopener noreferrer">
+              <h3>{project.title}</h3>
+            </a>
+            <p className="small">{project.description}</p>
+            <div className="project-section">
+              <h4>Problema resolvido</h4>
+              <p>{project.problem}</p>
+            </div>
+            <div className="project-section">
+              <h4>Contribuição</h4>
+              <p>{project.contribution}</p>
+            </div>
+            <div className="project-section">
+              <h4>Tecnologias utilizadas</h4>
+              <ul className="project-tech-list">
+                {project.technologies.map((technology) => (
+                  <li key={technology}>{technology}</li>
+                ))}
+              </ul>
+            </div>
+            <a className="project-link" href={project.repository} target="_blank" rel="noopener noreferrer">
+              Ver repositório
+            </a>
+          </article>
+        ))}
+      </div>
     </section>
   );
+};
+
+Portfolio.propTypes = {
+  projects: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      problem: PropTypes.string.isRequired,
+      technologies: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+      contribution: PropTypes.string.isRequired,
+      repository: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default Portfolio;
