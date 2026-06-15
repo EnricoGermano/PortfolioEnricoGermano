@@ -26,6 +26,22 @@ const Portfolio = ({ projects }) => {
               <p>{project.contribution}</p>
             </div>
             <div className="project-section">
+              <h4>Soft Skills</h4>
+              <p>{project.softSkills}</p>
+            </div>
+            <div className="project-section">
+              <h4>Metodologia Aplicada</h4>
+              <p>{project.metodologia}</p>
+            </div>
+            <div className="project-section">
+              <h4>Desafios Técnicos</h4>
+              <p>{project.desafios}</p>
+            </div>
+            <div className="project-section">
+              <h4>Resultados Obtidos</h4>
+              <p>{project.resultados}</p>
+            </div>
+            <div className="project-section">
               <h4>Tecnologias utilizadas</h4>
               <ul className="project-tech-list">
                 {project.technologies.map((technology) => (
@@ -53,6 +69,10 @@ Portfolio.propTypes = {
       contribution: PropTypes.string.isRequired,
       repository: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
+      softSkills: PropTypes.string.isRequired,
+      metodologia: PropTypes.string.isRequired,
+      desafios: PropTypes.string.isRequired,
+      resultados: PropTypes.string.isRequired,
     }),
   ).isRequired,
 };

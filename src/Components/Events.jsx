@@ -19,6 +19,11 @@ const Events = ({ activities }) => {
             </div>
             <h3>{activity.title}</h3>
             <p>{activity.description}</p>
+            {activity.link && (
+              <a className="project-link" href={activity.link} target="_blank" rel="noopener noreferrer" style={{ marginTop: '0.5rem', display: 'inline-block' }}>
+                Ver Certificado/Link
+              </a>
+            )}
           </article>
         ))}
       </div>
@@ -33,6 +38,7 @@ Events.propTypes = {
       subtitle: PropTypes.string.isRequired,
       period: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
+      link: PropTypes.string,
     }),
   ).isRequired,
 };
