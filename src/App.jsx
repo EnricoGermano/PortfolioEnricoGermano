@@ -10,6 +10,7 @@ import Portfolio from "./Components/Portfolio";
 
 import "./styles.css";
 
+import projectZeroImage from "../projetos/api4semestre.gif";
 import projectOneImage from "../projetos/api3semeste.gif";
 import projectTwoImage from "../projetos/api2semeste.gif";
 import projectThreeImage from "../projetos/api1semestre.gif";
@@ -61,6 +62,39 @@ const education = [
 ];
 
 const projects = [
+  {
+    title: "AgriTech - Estação Meteorológica IoT (Equipe Vulture)",
+    description:
+      "Solução IoT integrada para monitoramento meteorológico em áreas agrícolas, composta por estação meteorológica de baixo custo, datalogger e plataforma web para coleta, processamento e visualização de dados climáticos em tempo quase real.",
+    problem:
+      "A principal dor do cliente era coletar, processar e disponibilizar grandes volumes de dados climáticos gerados por sensores distribuídos em áreas agrícolas extensas, garantindo disponibilidade, integridade e monitoramento dos dispositivos.",
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Fastify",
+      "Python",
+      "PostgreSQL",
+      "Redis",
+      "MQTT",
+      "Docker",
+      "AWS",
+      "Nginx",
+      "Tailwind CSS",
+    ],
+    contribution:
+      "Atuei como Developer no back-end (Node.js/Fastify, filtros de relatórios e escopo por propriedade) e front-end (Next.js/React, interface de relatórios e testes), além de liderar frentes de Deploy/Ambientes na AWS EC2 com Nginx, HTTPS (Let's Encrypt) e GitHub Actions OIDC.",
+    repository: "https://github.com/Vulture-API/API-DSM-4SEMESTRE-2026",
+    image: projectZeroImage,
+    softSkills:
+      "Comunicação e Colaboração: Atuação transversal entre front-end, back-end e infraestrutura, alinhando contratos de API, critérios de usabilidade e automação de deploy para garantir entregas contínuas e estáveis nas Sprints.",
+    metodologia: "Scrum + DevOps (Jira, Confluence e GitFlow)",
+    desafios:
+      "Orquestrar a ingestão de telemetria IoT via MQTT com Python e Redis, estruturar um monólito modular escalável no Fastify e automatizar o provisionamento seguro com HTTPS e migrations na AWS EC2.",
+    resultados:
+      "Pipeline de CI/CD automatizado via OIDC na AWS, portal AgriTech com controle de acesso por propriedade e relatórios filtráveis, além de suíte de testes unitários, integração e usabilidade.",
+  },
   {
     title: "Controle de Apontamento de Horas - GSW",
     description:

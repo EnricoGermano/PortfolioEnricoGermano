@@ -50,7 +50,7 @@ const Portfolio = ({ projects }) => {
               </ul>
             </div>
             <a className="project-link" href={project.repository} target="_blank" rel="noopener noreferrer">
-              Ver repositório
+              Ver repositório ↗
             </a>
           </article>
         ))}
